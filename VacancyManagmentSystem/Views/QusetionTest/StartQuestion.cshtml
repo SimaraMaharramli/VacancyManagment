@@ -1,0 +1,72 @@
+﻿@model QuestionViewModel
+
+@{
+    int questioncount = Model.CurrentIndex + 1;
+}
+
+<div>
+    <div style="display:flex; justify-content:center; align-items:center; margin-top:50px;">
+        <span id="timer">@Model.TimeLimit seconds left</span>
+    </div>
+
+    <div class="test-question col-lg-12" style="display:flex; justify-content:center; align-items:center; margin:0 auto; height:70vh; width:100%;">
+        <div style="width:50%">
+            <h5>Question @questioncount of @Model.TotalQuestions</h5>
+            <p style="font-weight:bold;">@Model.Question.Text</p>
+
+            <form id="questionForm" method="post" asp-controller="QusetionTest" asp-action="SubmitAnswer">
+                <input type="hidden" name="ApplicationId" value="@Model.ApplicationId" />
+                <input type="hidden" name="QuestionId" value="@Model.Question.Id" />
+                <input type="hidden" name="QuestionIndex" value="@Model.CurrentIndex" />
+
+                <div class="answers">
+                    @foreach (var answer in Model.Question.Answers)
+                    {
+                        <div class="answer-option">
+                            <input type="radio" id="answer-@answer.Id" name="AnswerId" value="@answer.Id" />
+                            <label for="answer-@answer.Id">@answer.Text</label>
+                        </div>
+                    }
+                </div>
+                <div style="display:flex; justify-content:space-between">
+                    <div></div>
+                <div style="display:flex; justify-content:space-between; align-items:center;">
+                    <button type="submit" class="btn btn-primary" style="padding:20px 44px;">Next</button>
+                </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Timer ayarları
+    let timerElement = document.getElementById("timer");
+    let form = document.getElementById("questionForm");
+    let timeLimit = @Model.TimeLimit; // Sunucudan gelen zaman limiti
+    let countdown = timeLimit;
+
+    // Geri sayımı başlat
+    const countdownInterval = setInterval(() => {
+        countdown--;
+        timerElement.textContent = `${countdown} seconds left`;
+
+        if (countdown <= 0) {
+            clearInterval(countdownInterval); // Timer'ı durdur
+
+            // Eğer cevap seçilmediyse bir varsayılan cevap gönder
+            const selectedAnswer = form.querySelector('input[name="AnswerId"]:checked');
+            
+            if (!selectedAnswer) {
+                // Varsayılan olarak boş bir cevap gönder
+                let hiddenInput = document.createElement("input");
+                hiddenInput.type = "hidden";
+                hiddenInput.name = "AnswerId";
+                hiddenInput.value = "";
+                form.appendChild(hiddenInput);
+            }
+
+            form.submit(); // Formu gönder
+        }
+    }, 1000); // Her saniye güncelle
+</script>

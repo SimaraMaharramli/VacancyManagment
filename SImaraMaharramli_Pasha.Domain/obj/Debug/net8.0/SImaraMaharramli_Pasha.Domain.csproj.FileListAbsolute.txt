@@ -1,0 +1,14 @@
+C:\Users\farid\OneDrive\Desktop\SImaraMaharramli_Pasha\SImaraMaharramli_Pasha.Domain\bin\Debug\net8.0\SImaraMaharramli_Pasha.Domain.deps.json
+C:\Users\farid\OneDrive\Desktop\SImaraMaharramli_Pasha\SImaraMaharramli_Pasha.Domain\bin\Debug\net8.0\SImaraMaharramli_Pasha.Domain.runtimeconfig.json
+C:\Users\farid\OneDrive\Desktop\SImaraMaharramli_Pasha\SImaraMaharramli_Pasha.Domain\bin\Debug\net8.0\SImaraMaharramli_Pasha.Domain.dll
+C:\Users\farid\OneDrive\Desktop\SImaraMaharramli_Pasha\SImaraMaharramli_Pasha.Domain\bin\Debug\net8.0\SImaraMaharramli_Pasha.Domain.pdb
+C:\Users\farid\OneDrive\Desktop\SImaraMaharramli_Pasha\SImaraMaharramli_Pasha.Domain\obj\Debug\net8.0\SImaraMaharramli_Pasha.Domain.csproj.AssemblyReference.cache
+C:\Users\farid\OneDrive\Desktop\SImaraMaharramli_Pasha\SImaraMaharramli_Pasha.Domain\obj\Debug\net8.0\SImaraMaharramli_Pasha.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\farid\OneDrive\Desktop\SImaraMaharramli_Pasha\SImaraMaharramli_Pasha.Domain\obj\Debug\net8.0\SImaraMaharramli_Pasha.Domain.AssemblyInfoInputs.cache
+C:\Users\farid\OneDrive\Desktop\SImaraMaharramli_Pasha\SImaraMaharramli_Pasha.Domain\obj\Debug\net8.0\SImaraMaharramli_Pasha.Domain.AssemblyInfo.cs
+C:\Users\farid\OneDrive\Desktop\SImaraMaharramli_Pasha\SImaraMaharramli_Pasha.Domain\obj\Debug\net8.0\SImaraMaharramli_Pasha.Domain.csproj.CoreCompileInputs.cache
+C:\Users\farid\OneDrive\Desktop\SImaraMaharramli_Pasha\SImaraMaharramli_Pasha.Domain\obj\Debug\net8.0\SImaraMaharramli_Pasha.Domain.dll
+C:\Users\farid\OneDrive\Desktop\SImaraMaharramli_Pasha\SImaraMaharramli_Pasha.Domain\obj\Debug\net8.0\refint\SImaraMaharramli_Pasha.Domain.dll
+C:\Users\farid\OneDrive\Desktop\SImaraMaharramli_Pasha\SImaraMaharramli_Pasha.Domain\obj\Debug\net8.0\SImaraMaharramli_Pasha.Domain.pdb
+C:\Users\farid\OneDrive\Desktop\SImaraMaharramli_Pasha\SImaraMaharramli_Pasha.Domain\obj\Debug\net8.0\SImaraMaharramli_Pasha.Domain.genruntimeconfig.cache
+C:\Users\farid\OneDrive\Desktop\SImaraMaharramli_Pasha\SImaraMaharramli_Pasha.Domain\obj\Debug\net8.0\ref\SImaraMaharramli_Pasha.Domain.dll

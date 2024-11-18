@@ -1,0 +1,21 @@
+﻿@model SImaraMaharramli_Pasha.Domain.Entity.Category
+<div class="main-panel">
+    <div class="content-wrapper">
+        <div class="row">
+            <div class="col-md-12 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Create Category</h4>
+                        <form class="forms-sample" method="post" asp-area="AdminArea" asp-controller="Category" asp-action="Create">
+                            <div class="form-group">
+                                <label for="exampleInputUsername1">Category Name</label>
+                                <input type="text" class="form-control" id="exampleInputUsername1" asp-for=Name name="Name" placeholder="Category Name" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary me-2">Create</button>
+                        </form>
+                    </div> 
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,64 @@
+﻿@model SImaraMaharramli_Pasha.Domain.Entity.Question
+@{
+    int count=1;
+}
+<div class="main-panel">
+    <div class="content-wrapper" >
+        <div class="row" style="margin-left:5px;">
+            <div class="col-md-12 grid-margin stretch-card">
+                <div class="card" style="margin-left:10px;">
+                    <div class="card-body">
+                        <h4 class="card-title">Update Question</h4>
+                        <form class="forms-sample" method="post" asp-area="AdminArea" asp-controller="Question" asp-action="Update">
+                            <input type="hidden" name="Id" value="@Model.Id" />
+
+                            <div class="form-group">
+                                <label for="VacancyId">Vacancy</label>
+                                <select name="VacancyId" class="form-control">
+                                    @foreach (var vacancy in ViewBag.Vacancies)
+                                    {
+                                        <option value="@vacancy.Id">
+                                            @vacancy.Name
+                                        </option>
+                                    }
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="Text">Question</label>
+                                <input type="text" class="form-control" name="Text" value="@Model.Text" placeholder="Enter question text" required />
+                            </div>
+
+                            <h5>Answers</h5>
+                            @for (int i = 0; i < Model.Answers.Count; i++)
+                            {
+                                <div class="form-group">
+                                    <label for="Answers[@i].Text">Answer @count</label>
+                                    <div class="form-check">
+                                        <!-- Radio button -->
+                                        <input type="radio"
+                                               class="form-check-input"
+                                               name="CorrectAnswer"
+                                               value="@i"
+                                               @(Model.Answers[i].IsCorrect ? "checked" : "") />
+
+                                        <!-- Answer text input -->
+                                        <input type="text"
+                                               class="form-control"
+                                               id="Answers[@i].Text"
+                                               name="Answers[@i].Text"
+                                               value="@Model.Answers[i].Text"
+                                               required />
+                                    </div>
+                                </div>
+                                count++;
+                            }
+
+                            <button type="submit" class="btn btn-primary me-2">Update</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,7 @@
+Salam,hər vaxtınız xeyir.
+
+Application.json içindən Server dəyişməyi unutmayın.
+
+Təşəkkkürlər.
+Hörmətlə,
+Simarə Məhərrəmli.

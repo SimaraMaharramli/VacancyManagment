@@ -1,0 +1,90 @@
+﻿@model List<SImaraMaharramli_Pasha.Domain.Entity.VacancyApplication>
+@{
+    int count = 1;
+}
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+
+
+
+
+@if (Model != null)
+{
+
+
+    <div id="resultTable" style="width:100%;">
+
+
+        <table id="resultTable" class="table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Full Name</th>
+                    <th>Phone Number</th>
+                    <th>Cv</th>
+                    <th>Correct Percentage</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                @foreach (var question in Model)
+                {
+
+                    <tr>
+                        <td>@count</td>
+                        <td>@question.FullName</td>
+                        <td>@question.Phone</td>
+                        @if (question.AppTestResult.CorrectPercentage >= 75)
+                        {
+                            <td style="color:green;">@question.AppTestResult.CorrectPercentage %</td>
+                        }
+                        else if (question.AppTestResult.CorrectPercentage >= 50)
+                        {
+                            <td style="color:yellow;">@question.AppTestResult.CorrectPercentage %</td>
+                        }
+                        else
+                        {
+                            <td style="color:red;">@question.AppTestResult.CorrectPercentage %</td>
+
+                        }
+                        @if (!string.IsNullOrEmpty(question.CVPath))
+                        {
+                            <td>
+                                <a href="@Url.Content(question.CVPath)" target="_blank">View CV</a>
+                            </td>
+                        }
+                        else
+                        {
+                            <span>No CV Uploaded</span>
+                        }
+
+                        <td> <a style="color:#4B49AC; font-size:28px;" asp-area="AdminArea" asp-controller="AppResult" asp-action="TestResultsDetails" asp-route-applicationId="@question.Id"> <i class="fa-solid fa-circle-info"></i></a></td>
+                     </tr>
+                    count++;
+                }
+
+
+
+            </tbody>
+        </table>
+
+
+    </div>
+}
+else
+{
+    <p>Not found test result</p>
+}
+
+
+
+
+
+
+
+

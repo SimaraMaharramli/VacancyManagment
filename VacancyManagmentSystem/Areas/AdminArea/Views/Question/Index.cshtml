@@ -1,0 +1,69 @@
+﻿@model List<SImaraMaharramli_Pasha.Domain.Entity.Vacancy>
+
+@if (Model!=null)
+                            {
+<div class="accordion" id="vacancyAccordion" style="width:100%;">
+    @foreach (var vacancy in Model)
+    {
+        <div class="accordion-item" style="width:100%;">
+            <h2 class="accordion-header" id="heading-@vacancy.Id" style="width:100%; display:flex;">
+                <button class="accordion-button collapsed" style="width:100%;" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-@vacancy.Id" aria-expanded="false" aria-controls="collapse-@vacancy.Id">
+                    @vacancy.Name
+                </button>
+                    <span style="font-size:20px; display:block; padding-right:5px;"> @vacancy.Questions.Count()</span>
+            </h2>
+            <div id="collapse-@vacancy.Id" class="accordion-collapse collapse" aria-labelledby="heading-@vacancy.Id" data-bs-parent="#vacancyAccordion">
+                <div class="accordion-body">
+                    <button class="btn btn-primary mb-3" onclick="location.href='@Url.Action("Create", "Question", new { vacancyId = vacancy.Id })'">
+                        Add New Question
+                    </button>
+                  @if (vacancy.Questions.Any())
+                        {
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Question</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    
+                                        @foreach (var question in vacancy.Questions)
+                                        {
+                                            <tr>
+                                                <td>@question.Text</td>
+                                                <td>
+                                                    <a asp-action="Delete" asp-route-id="@question.Id" class="badge badge-danger"><i class="fa-solid fa-trash"></i></a>
+                                                    <a asp-action="Update" asp-route-id="@question.Id" class="badge badge-warning"><i class="fa-solid fa-pen-to-square"></i></a>
+                                                </td>
+                                            </tr>
+                                        }
+
+                                   
+
+                                </tbody>
+                            </table>
+                        }
+                        else
+                        {
+                            <p>
+                                Not found questions
+                            </p>
+                        }
+                        <button class="btn btn-primary mb-3" onclick="location.href='@Url.Action("AllQuestion", "Question", new { vacancyId = vacancy.Id })'">
+                            All
+                        </button>
+                </div>
+            </div>
+        </div>
+            
+    }
+    </div>
+}
+else
+{
+    <p>
+        Not found vacancy
+    </p>
+}
+

@@ -1,0 +1,51 @@
+﻿@model SImaraMaharramli_Pasha.Domain.Entity.Question
+@{
+    // int count = 1;
+    // var answerList = Model.Answers.ToList();
+}
+<div class="main-panel">
+    <div class="content-wrapper">
+        <div class="row">
+            <div class="col-md-12 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Create Question</h4>
+                        <form class="forms-sample" method="post" asp-area="AdminArea" asp-controller="Question" asp-action="Create">
+                            <div class="form-group">
+                                <label for="VacancyId">Vacancy</label>
+                                <select name="VacancyId" class="form-control">
+
+                                    <option value="@ViewBag.Vacancies.Id">@ViewBag.Vacancies.Name</option>
+                                    
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="Text">Question</label>
+                                <input type="text" class="form-control" name="Text" placeholder="Enter question text" required />
+                            </div>
+
+                            <h5>Answers</h5>
+                            @for (int i = 0; i < 3; i++)
+                            {
+
+                                <div class="form-group">
+                                    <label for="Answers[@i].Text">Answer </label>
+                                    <input  type="text" class="form-control" name="Answers[@i].Text" placeholder="Enter answer text" required />
+                                    <input type="radio"
+                                           class="form-check-input"
+                                           name="CorrectAnswer"
+                                           value="@i"
+                                    @(Model.Answers.Count > i && Model.Answers[i].IsCorrect ? "checked" : "") />
+                                </div>
+                                @* count++; *@
+                            }
+
+                            <button type="submit" class="btn btn-primary me-2">Create</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

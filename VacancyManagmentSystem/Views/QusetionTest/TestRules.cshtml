@@ -1,0 +1,14 @@
+﻿@model TestRulesViewModel
+<div style="display:flex; justify-content:center;align-items:center ;align-content: space-around;margin:0 auto; height:70vh;">
+    <div class="test-rules">
+        <h2>Test Rules</h2>
+        <div style="white-space: pre-line;">
+            @Html.Raw(Model.Rules)
+        </div>
+        <div style="white-space: pre-line;">
+            <form asp-route-applicationId="@Model.ApplicationId" asp-controller="QusetionTest" asp-action="StartQuestion" method="get">
+            <button type="submit" class="btn btn-primary">Start Test</button>
+        </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,71 @@
+﻿@model SImaraMaharramli_Pasha.Domain.Entity.Vacancy
+
+<div class="main-panel">
+    <div class="content-wrapper">
+        <div class="row">
+            <div class="col-md-12 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Create Vacancy</h4>
+                        <form class="forms-sample" method="post" asp-area="AdminArea" asp-controller="Vacancy" asp-action="Create">
+                            <div class="col-4">
+                                <label class="labelstyle" for="translates[0].LangCode">Categories</label>
+                                <select name="CategoryId" style="width:100%; border: 1px solid #80808030;">
+                                    @foreach (var item in ViewBag.Categories)
+                                    {
+                                        <option  value="@item.Id">@item.Name</option>
+                                    }
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputUsername1">Vacancy Name</label>
+                                <input type="text" class="form-control" id="exampleInputUsername1" asp-for=Name name="Name" placeholder="Vacancy Name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="validFrom">Valid From</label>
+                                <input type="date" class="form-control" id="validFrom" name="ValidFrom" asp-for="ValidFrom" value=" @DateTime.Now.ToString(" yyyy-MM-dd")" required />
+                            </div>
+                            <div class="form-group">
+                                <label for="validTo">Valid To</label>
+                                <input type="date" class="form-control" id="validTo" name="ValidTo" asp-for="ValidTo" value=" @DateTime.Now.ToString(" yyyy-MM-dd")" required />
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleTextarea1">Description</label>
+                                <div id="editor-container" style="height: 150px;"></div>
+                                <textarea name="Description" asp-for="Description" id="Description" style="display: none;"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary me-2">Create</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/quill/2.0.2/quill.snow.css"
+integrity="sha512-ggYQiYwuFFyThzEv6Eo6g/uPLis4oUynsE88ovEde5b2swycOh9SlAI8FL/cL2AkGGNnWADPXcX2UnPIJS2ozw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/quill/2.0.2/quill.min.js" 
+integrity="sha512-1nmY9t9/Iq3JU1fGf0OpNCn6uXMmwC1XYX9a6547vnfcjCY1KvU9TE5e8jHQvXBoEH7hcKLIbbOjneZ8HCeNLA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+    var quill = new Quill('#editor-container', {
+        theme: 'snow' // veya 'bubble'
+    });
+
+    document.querySelector('form').addEventListener('submit', function () {
+        var descriptionInput = document.querySelector('#Description');
+        descriptionInput.value = quill.root.innerHTML; // Quill içeriğini al ve textarea'ya yaz
+    });
+
+    document.querySelector('form').addEventListener('submit', function () {
+        const isActiveCheckbox = document.getElementById('IsActiveCheckbox');
+        if (!isActiveCheckbox.checked) {
+            // Eğer checkbox işaretli değilse, gizli bir input alanı ekleyip false gönderiyoruz
+            const hiddenInput = document.createElement('input');
+            hiddenInput.type = 'hidden';
+            hiddenInput.name = 'IsActive';
+            hiddenInput.value = 'true';
+            this.appendChild(hiddenInput);
+        }
+    });
+</script>

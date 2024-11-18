@@ -1,0 +1,97 @@
+﻿@model List<VacancyManagmentSystem.Areas.AdminArea.Models.DetailedResultViewModel>
+
+<div style="display: flex; flex-wrap: wrap; margin: 20px; justify-content:space-between; width:100%;">
+  
+    <div style="flex: 1; min-width: 60%;" class="col-lg-6">
+        <h2>Detailed Test Results</h2>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Question</th>
+                    <th>Selected Answer</th>
+                    <th>Correct/Incorrect</th>
+                    <th>All Answers</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (int i = 0; i < Model.Count; i++)
+                {
+                    var result = Model[i];
+                    <tr>
+                        <td>@(i + 1)</td>
+                        <td>@result.QuestionText</td>
+                        <td>@result.SelectedAnswer</td>
+                        <td>
+                            @if (result.IsCorrect)
+                            {
+                                <span style="color: green;">Correct</span>
+                            }
+                            else
+                            {
+                                <span style="color: red;">Incorrect</span>
+                            }
+                        </td>
+                        <td>
+                            <ul>
+                                @foreach (var answer in result.AllAnswers)
+                                {
+                                    <li>
+                                        @answer.Text
+                                        @if (answer.IsCorrect)
+                                        {
+                                            <strong style="color: green;">(Correct)</strong>
+                                        }
+                                    </li>
+                                }
+                            </ul>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <div style="flex: 1; min-width: 40%; display: flex; justify-content: center; align-items: start;" class="col-lg-6" >
+        <canvas id="resultsChart" style="max-width: 400px; max-height: 400px;"></canvas>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+       
+        const results = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(Model));
+        let correct = 0, incorrect = 0, unanswered = 0;
+
+        results.forEach(result => {
+            if (!result.SelectedAnswer || result.SelectedAnswer === "Not answered") {
+                unanswered++;
+            } else if (result.IsCorrect) {
+                correct++;
+            } else {
+                incorrect++;
+            }
+        });
+
+        const ctx = document.getElementById('resultsChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: ['Correct', 'Incorrect', 'Unanswered'],
+                datasets: [{
+                    data: [correct, incorrect, unanswered],
+                    backgroundColor: ['#28a745', '#dc3545', '#ffc107'],
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                    },
+                },
+            }
+        });
+    });
+</script>

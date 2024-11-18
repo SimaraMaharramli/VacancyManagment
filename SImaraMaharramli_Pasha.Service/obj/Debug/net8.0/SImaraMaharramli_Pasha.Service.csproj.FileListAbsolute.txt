@@ -1,0 +1,15 @@
+C:\Users\farid\OneDrive\Desktop\SImaraMaharramli_Pasha\SImaraMaharramli_Pasha.Service\bin\Debug\net8.0\SImaraMaharramli_Pasha.Service.deps.json
+C:\Users\farid\OneDrive\Desktop\SImaraMaharramli_Pasha\SImaraMaharramli_Pasha.Service\bin\Debug\net8.0\SImaraMaharramli_Pasha.Service.dll
+C:\Users\farid\OneDrive\Desktop\SImaraMaharramli_Pasha\SImaraMaharramli_Pasha.Service\bin\Debug\net8.0\SImaraMaharramli_Pasha.Service.pdb
+C:\Users\farid\OneDrive\Desktop\SImaraMaharramli_Pasha\SImaraMaharramli_Pasha.Service\bin\Debug\net8.0\SImaraMaharramli_Pasha.Domain.dll
+C:\Users\farid\OneDrive\Desktop\SImaraMaharramli_Pasha\SImaraMaharramli_Pasha.Service\bin\Debug\net8.0\SImaraMaharramli_Pasha.Domain.pdb
+C:\Users\farid\OneDrive\Desktop\SImaraMaharramli_Pasha\SImaraMaharramli_Pasha.Service\obj\Debug\net8.0\SImaraMaharramli_Pasha.Service.csproj.AssemblyReference.cache
+C:\Users\farid\OneDrive\Desktop\SImaraMaharramli_Pasha\SImaraMaharramli_Pasha.Service\obj\Debug\net8.0\SImaraMaharramli_Pasha.Service.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\farid\OneDrive\Desktop\SImaraMaharramli_Pasha\SImaraMaharramli_Pasha.Service\obj\Debug\net8.0\SImaraMaharramli_Pasha.Service.AssemblyInfoInputs.cache
+C:\Users\farid\OneDrive\Desktop\SImaraMaharramli_Pasha\SImaraMaharramli_Pasha.Service\obj\Debug\net8.0\SImaraMaharramli_Pasha.Service.AssemblyInfo.cs
+C:\Users\farid\OneDrive\Desktop\SImaraMaharramli_Pasha\SImaraMaharramli_Pasha.Service\obj\Debug\net8.0\SImaraMaharramli_Pasha.Service.csproj.CoreCompileInputs.cache
+C:\Users\farid\OneDrive\Desktop\SImaraMaharramli_Pasha\SImaraMaharramli_Pasha.Service\obj\Debug\net8.0\SImaraMa.EC268141.Up2Date
+C:\Users\farid\OneDrive\Desktop\SImaraMaharramli_Pasha\SImaraMaharramli_Pasha.Service\obj\Debug\net8.0\SImaraMaharramli_Pasha.Service.dll
+C:\Users\farid\OneDrive\Desktop\SImaraMaharramli_Pasha\SImaraMaharramli_Pasha.Service\obj\Debug\net8.0\refint\SImaraMaharramli_Pasha.Service.dll
+C:\Users\farid\OneDrive\Desktop\SImaraMaharramli_Pasha\SImaraMaharramli_Pasha.Service\obj\Debug\net8.0\SImaraMaharramli_Pasha.Service.pdb
+C:\Users\farid\OneDrive\Desktop\SImaraMaharramli_Pasha\SImaraMaharramli_Pasha.Service\obj\Debug\net8.0\ref\SImaraMaharramli_Pasha.Service.dll
