@@ -50,7 +50,7 @@ Clone the Repository:
 
 bash
 Copy code
-git clone https://github.com/your-repo/vacancy-management-system.git
+https://github.com/SimaraMaharramli/VacancyManagment
 Setup the Database:
 
 #Configure the connection string in appsettings.json:
