@@ -1,6 +1,6 @@
 Salam,hər vaxtınız xeyir.
-
-Application.json içindən Server dəyişməyi unutmayın.
+Admin Panel keçid -> / AdminArea
+Application.json içindən Server dəyişməyi və verilən db file import etməyi unutmayın.
 
 Təşəkkkürlər.
 Hörmətlə,
